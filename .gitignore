@@ -1,0 +1,7 @@
+.env
+.idea/*
+.DS_STORE
+*.zip
+*.csv
+binance_eth_agg_data/*
+.ipynb_checkpoints/*
