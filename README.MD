@@ -52,13 +52,13 @@ their null distributions with significance p < 0.017.
 
 ### Method 3: Trade Timing
 
-Accounts that have a disproportionate number of trades at the exact same timestamps as accounts 
-classified as arb via Method 1 and 2, must be using the same selection criteria for trade times.
+Using Methods 1 and 2 we identified 31 arbitrage accounts. Unlike the remaining 69 accounts,
+the arb accounts only trade at times when it's most profitable to arbitrage. We add all 
+trade timestamps from these 31 accounts to a set of "tainted timestamps," representing 
+timestamps where an arbitrage is highly likely present.
 
-To set up this test, we create a set of every single trade timestamp from previously identified
-arb accounts. We consider these timestamps "tainted" by arb. If an account's trades share
-a higher percentage of tainted timestamps than could be explained by randomness, the account
-must be aware of the same trading signal (ie the oracle `price_edge`).
+Non-arbitrage accounts that have a higher percentage of tainted timestamps than can be 
+explained by randomness likely use the same selection criteria for trade times.
 
 We define the timing null distribution as trade timestamps sampled from all accounts not
 classified as arb via Method 1 or 2. We classify an additional 16 accounts as arbitrage using
